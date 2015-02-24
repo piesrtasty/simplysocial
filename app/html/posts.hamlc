@@ -1,3 +1,6 @@
 %section.wrapper
 
-	!= render_partial( '_topnav', {className: 'opaque fixed'} )
+  != render_partial( '_topnav', {className: 'opaque fixed'} )
+
+  %section.hero
+    .inner-hero

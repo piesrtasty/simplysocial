@@ -5,5 +5,10 @@
 	.new-message{ ng-click: "newMessage()" }
 	%input.search-input{ type: 'text' }
 	.search-icon
-	.current-user-avatar
-	.open-menu
+	.current-user-avatar{ ng-mouseenter: "menuOpen = true", ng-mouseleave: "menuOpen = false" }
+	.open-menu{ ng-mouseenter: "menuOpen = true", ng-mouseleave: "menuOpen = false" }
+	%ul.dropdown-menu{ ng-show: "menuOpen" }
+		%li Profile
+		%li Followers
+		%li Following
+		%li Settings

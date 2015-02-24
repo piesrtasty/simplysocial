@@ -1,8 +1,12 @@
 
 //= require normalize.css/normalize
 
+// Imports
 @import "mixins";
 @import "vars";
+
+// Google Fonts
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
 
 // Color Palette 1 -> 4 = Darl -> Light
 $green1: #107E60;
@@ -74,6 +78,11 @@ $search_icon_height: 16px;
   font-family: 'ProximaNova';
 }
 
+// Temporary
+body {
+  background-color: black;
+}
+
 .block {
   display: block; 
 }
@@ -96,7 +105,8 @@ input:focus {
 
 .topnav {
   z-index: 5;
-  position: absolute;
+  position: fixed;
+  top: 0;
   overflow: visible;
   height: $topnav_height; width: 100%;
   background-color: $topnav_bg;
@@ -163,10 +173,13 @@ input:focus {
 
 .current-user-avatar {
   position: absolute;
-  right: 118px;
+  // right: 118px;
+  right: 108px;
   top: 15px;
-  width: $avatar_width;
+  width: $avatar_width + 10px;
   height: $avatar_height;
+  padding-right: 10px;
+  cursor: pointer;
   background: url('/avatars/current_user_avatar.png') no-repeat center;
   @include image-2x('/avatars/current_user_avatar.png', $avatar_width, $avatar_height);
 }
@@ -177,9 +190,94 @@ input:focus {
   right: 101px;
   width: $chevron_down_width;
   height: $chevron_down_height;
+  cursor: pointer;
   background: url('/icons/chevron-down.png') no-repeat center;
-  @include image-2x('/icons/chevron-down@2x.png', $avatar_width, $avatar_height);
+  @include image-2x('/icons/chevron-down@2x.png', $chevron_down_width, $chevron_down_height);
 }
+
+.topnav .dropdown-menu  {
+  position: absolute;
+  top: 55px;
+  right: 84px;
+  width: 96px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: $blue_gray5;
+  @include border-radius(3px);
+
+  &::before {
+    position: absolute;
+    top: -4px;
+    right: 16px;
+    width: 0; 
+    height: 0;
+    content: '';
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid $blue_gray5;
+  }
+
+  li {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    padding: 8px 0px 8px 20px;
+    border-bottom: 1px solid $blue_gray4;
+  }
+
+  li:last-child {
+    border: none;
+  }
+
+}
+
+/* -------------------------- */
+/*          Hero
+/* -------------------------- */
+
+.hero {
+  width: 100%;
+  min-height: 425px;
+  // margin-top: $topnav_height;
+  background: url('/hero.png');
+  background-size:cover;
+  background-position:center center;
+  background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
