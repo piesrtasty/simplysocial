@@ -54,6 +54,10 @@ $avatar_height: 30px;
 $chevron_down_width: 7px;
 $chevron_down_height: 4px;
 
+// Search Icon
+$search_icon_width: 16px;
+$search_icon_height: 16px;
+
 /* -------------------------- */
 /*          Angular
 /* -------------------------- */
@@ -133,7 +137,7 @@ input:focus {
 }
 
 // TODO: Extract these variables?
-.search-box {
+.search-input {
   position: absolute;
   right: 171px;
   top: 15px;
@@ -143,6 +147,17 @@ input:focus {
   // height: 28px;
   height: 26px;
   @include border-radius(4px);
+}
+
+.search-icon {
+  position: absolute;
+  right: 180px;
+  top: 22px;
+  width: $search_icon_width;
+  height: $search_icon_height;
+  opacity: .4;
+  background: url('/icons/search-icon.png') no-repeat center;
+  @include image-2x('/icons/search-icon@2x.png', $search_icon_width, $search_icon_height);
 }
 
 .current-user-avatar {

@@ -3,6 +3,7 @@
 	.text-logo simply
 
 	.new-message
-	%input.search-box{ type: 'text' }
+	%input.search-input{ type: 'text' }
+	.search-icon
 	.current-user-avatar
 	.open-menu
