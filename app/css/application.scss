@@ -132,6 +132,7 @@ input:focus {
   top: $nav_icon_top_offset;
   width: $new_message_width;
   height: $new_message_height;
+  cursor: pointer;
   background: url('/icons/new-message.png') no-repeat center;
   @include image-2x('/icons/new-message@2x.png', $new_message_width, $new_message_height);
 }

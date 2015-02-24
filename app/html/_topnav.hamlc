@@ -1,8 +1,8 @@
-.topnav
+.topnav{ ng-controller: 'topNavController' }
 	.icon-logo
 	.text-logo simply
 
-	.new-message
+	.new-message{ ng-click: "newMessage()" }
 	%input.search-input{ type: 'text' }
 	.search-icon
 	.current-user-avatar
