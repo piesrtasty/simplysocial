@@ -1,0 +1,15 @@
+.DS_Store
+.sass-cache/
+.env
+*.swp
+*.swo
+*.log
+*.bck
+
+tiny-lr.pid
+
+server/public/bower
+server/public/assets
+tmp/**/*.*
+
+node_modules/*

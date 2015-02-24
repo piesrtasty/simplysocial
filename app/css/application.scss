@@ -1,0 +1,171 @@
+
+//= require normalize.css/normalize
+
+@import "mixins";
+@import "vars";
+
+// Color Palette 1 -> 4 = Darl -> Light
+$green1: #107E60;
+$green2: #343D41;
+$green3: #20CB9A;
+$green4: #57FED2;
+
+$green_gray1: #262728;
+$green_gray2: #343D41;
+$green_gray3: #697074;
+$green_gray4: #B5BDC1;
+
+$blue1: #165B7D;
+$blue2: #3798C8;
+$blue3: #51B9EC;
+$blue4: #7ED3FD;
+
+$blue_gray1: #303D4E;
+$blue_gray2: #636E7E;
+$blue_gray3: #BEC3CB;
+$blue_gray4: #DEE1E5;
+$blue_gray5: #F4F5F7;
+
+// Top Nav
+$topnav_bg: #262729;
+$nav_icon_top_offset: 20px;
+
+// Icon Logo
+$icon_logo_width: 27px;
+$icon_logo_height: 25px;
+$icon_logo_left_offset: 100px;
+// $icon_logo_top_offset: 20px;
+
+// Text Logo
+$text_logo_left_offset: 13px;
+$text_logo_top_offset: 6px;
+$text_logo_color: #676B74;
+
+// New Message Icon
+$new_message_width: 31px;
+$new_message_height: 26px;
+$new_message_right_offset: 395px;
+
+// Avatars
+$avatar_width: 30px;
+$avatar_height: 30px;
+
+// Chevron Icons
+$chevron_down_width: 7px;
+$chevron_down_height: 4px;
+
+/* -------------------------- */
+/*          Angular
+/* -------------------------- */
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+/* -------------------------- */
+/*          General
+/* -------------------------- */
+
+* {
+  font-family: 'ProximaNova';
+}
+
+.block {
+  display: block; 
+}
+
+.inline {
+  display: inline;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* -------------------------- */
+/*          Topnav
+/* -------------------------- */
+
+.topnav {
+  z-index: 5;
+  position: absolute;
+  overflow: visible;
+  height: $topnav_height; width: 100%;
+  background-color: $topnav_bg;
+  font-weight: 100;
+}
+
+.icon-logo {
+  position: absolute;
+  left: $icon_logo_left_offset;
+  top: $nav_icon_top_offset;
+  width: $icon_logo_width;
+  height: $icon_logo_height;
+  background: url('/icons/logo.png') no-repeat center;
+  @include image-2x('/icons/logo@2x.png', $icon_logo_width, $icon_logo_height);
+}
+
+.text-logo  {
+  position: absolute;
+  left: $icon_logo_left_offset + $icon_logo_width + $text_logo_left_offset;
+  top: $nav_icon_top_offset + $text_logo_top_offset;
+  color: $green_gray3;
+  font-size: 18px;
+}
+
+.text-logo:after {
+  content: 'social';
+  color: $green_gray4;
+}
+
+.new-message {
+  position: absolute;
+  right: $new_message_right_offset;
+  top: $nav_icon_top_offset;
+  width: $new_message_width;
+  height: $new_message_height;
+  background: url('/icons/new-message.png') no-repeat center;
+  @include image-2x('/icons/new-message@2x.png', $new_message_width, $new_message_height);
+}
+
+// TODO: Extract these variables?
+.search-box {
+  position: absolute;
+  right: 171px;
+  top: 15px;
+  background-color: $topnav_bg;
+  border: 1px solid $green_gray2;
+  width: 198px;
+  // height: 28px;
+  height: 26px;
+  @include border-radius(4px);
+}
+
+.current-user-avatar {
+  position: absolute;
+  right: 118px;
+  top: 15px;
+  width: $avatar_width;
+  height: $avatar_height;
+  background: url('/avatars/current_user_avatar.png') no-repeat center;
+  @include image-2x('/avatars/current_user_avatar.png', $avatar_width, $avatar_height);
+}
+
+.open-menu  {
+  position: absolute;
+  top: 29px;
+  right: 101px;
+  width: $chevron_down_width;
+  height: $chevron_down_height;
+  background: url('/icons/chevron-down.png') no-repeat center;
+  @include image-2x('/icons/chevron-down@2x.png', $avatar_width, $avatar_height);
+}
+
+
+
+
+

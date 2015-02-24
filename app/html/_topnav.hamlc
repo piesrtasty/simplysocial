@@ -1,0 +1,8 @@
+.topnav
+	.icon-logo
+	.text-logo simply
+
+	.new-message
+	%input.search-box{ type: 'text' }
+	.current-user-avatar
+	.open-menu

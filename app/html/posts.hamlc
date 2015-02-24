@@ -1,0 +1,3 @@
+%section.wrapper
+
+	!= render_partial( '_topnav', {className: 'opaque fixed'} )
