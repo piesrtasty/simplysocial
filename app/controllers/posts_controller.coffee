@@ -125,10 +125,107 @@ angular.module( 'app' ).controller
         photo: false
         video: false
       },
+      {
+        name: "Michael Wong"
+        avatar: "/avatars/michael-wong.png"
+        timeAgo: "1h"
+        content: "Awesome! Check this out. instagram.com/p/mV0PUrHRwQ/"
+        expandable: false
+        type: 'post'
+        photo: false
+        video: true
+        videoUrl: '/videos/skateboard-video.png'
+      },
+      {
+        name: "Ed Wellbrook"
+        avatar: "/avatars/ed-wellbrook.png"
+        timeAgo: "2h"
+        content: "Ed Wellbrook #freelancers will enjoy @WDTrends for graphic and web design tip and inspiration."
+        expandable: true
+        type: 'post'
+        photo: false
+        video: false
+        comments: [
+          {
+            name: "Jason Larsen"
+            avatar: "/avatars/jason-larsen.png"
+            timeAgo: "1h"
+            content: "Great list of tips! #freelance for life! "
+          },
+          {
+            name: "Rafaela Dantas"
+            avatar: "/avatars/rafaela-dantas.png"
+            timeAgo: "1h"
+            content: "All good stuff... love finding new resources for the #freelancer"
+          }
+        ]
+      },
+      {
+        name: "Ignacio Giri"
+        avatar: "/avatars/ignacio-giri.png"
+        timeAgo: "1h"
+        content: "Sponsor // Bootstrap Responsive Templates bit.ly/1qfjLOI #design"
+        expandable: false
+        type: 'post'
+        photo: false
+        video: false
+      },
+      {
+        name: "Lauren Gray"
+        avatar: "/avatars/lauren-gray.png"
+        timeAgo: "1h"
+        content: "7 Servings of Type for a Healthy Head & Body heydesigner.net/yfwnj"
+        expandable: false
+        type: 'post'
+        photo: false
+        video: false
+      },
+      {
+        name: "Buzz Usborne"
+        avatar: "/avatars/buzz-usborne.png"
+        timeAgo: "25m"
+        content: "Road trip!  bit.ly/1hkXFdK"
+        expandable: false
+        type: 'photo'
+        photo: true
+        video: false
+        photoUrl: '/photos/bus-photo.png'
+      },
+      {
+        name: "Scott Riley"
+        avatar: "/avatars/scott-riley.png"
+        timeAgo: "2h"
+        content: "Deal with your problems before they deal with your happiness."
+        expandable: false
+        type: 'post'
+        photo: false
+        video: false
+      },
+      {
+        name: "Ryan O. Hicks"
+        avatar: "/avatars/ryan-o-hicks.png"
+        timeAgo: "1h"
+        content: "Excited about @99U Conf lineup this year conference.99u.com"
+        expandable: false
+        type: 'post'
+        photo: false
+        video: false
+      },
+      {
+        name: "Samihah Azim"
+        avatar: "/avatars/samihah-azim.png"
+        timeAgo: "25m"
+        content: "Love this picture instagram.com/p/mV0PUrHRwQ/"
+        expandable: false
+        type: 'photo'
+        photo: true
+        video: false
+        photoUrl: '/photos/flower-photo.png'
+      },
     ]
-
+    
+       
  
-
     # TODO: Refactor into a directive
     $scope.showComments = ($event) ->
       # Remove the bottom border and margin of the post when comments are open
