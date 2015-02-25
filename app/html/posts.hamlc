@@ -47,3 +47,8 @@
   .modal-wrapper
     .close-modal{ ng-click: "closeModal()" }
     .modal-content
+      .add-media-container
+        != render_partial( '_add_media' )
+      %label Create new message
+      %textarea
+      %button Post
