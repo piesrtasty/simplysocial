@@ -94,6 +94,14 @@ $play_btn_icon_height: 35px;
 $post_cta_icon_width: 13px;
 $post_cta_icon_height: 13px;
 
+// Content Container
+$content_container_top_offset: 425px;
+
+// Footer
+$footer_height: 130px;
+// $footer_top_offset: 143px; // This is the measurement from the PSD
+$footer_top_offset: 100px; // This is the measurement from invision prototype @ http://invis.io/5RU0VXJY
+
 /* -------------------------- */
 /*          Angular
 /* -------------------------- */
@@ -288,6 +296,7 @@ input:focus {
   width: 100%;
   min-height: 425px;
   position: absolute;
+  top: 0;
   background: url('/hero.png');
   background-size:cover;
   background-position:center center;
@@ -434,7 +443,7 @@ form.new-post {
 /* -------------------------- */
 
 .content-container {
-  position: absolute;
+  margin-top: $content_container_top_offset;
   top: $list_container_top_offset;
   width: 100%;
 }
@@ -442,7 +451,7 @@ form.new-post {
 .list-container {
   width: $list_container_width;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 50px + $content_container_top_offset;
 }
 
 
@@ -697,6 +706,37 @@ form.new-post {
 
 }
 
+/* -------------------------- */
+/*     Footer
+/* -------------------------- */
+
+.footer {
+  height: $footer_height;
+  margin-top: $footer_top_offset;
+  border-top: 1px solid $blue_gray4;
+
+  ul {
+    list-style-type: none;
+    text-align: center;
+
+    li {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: .5px;
+      color: $green2;
+      cursor: pointer;
+      margin: 0 14px 0 14px;
+    }
+
+    li:last-child {
+      cursor: default;
+      color: #8D9198;
+    }
+
+  }
+
+}
 
 
 

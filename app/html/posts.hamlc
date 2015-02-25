@@ -40,5 +40,5 @@
             %input.new-comment-content{ placeholder: "Reply..." }
             
   %section.footer
-    != render_partial( '_footer' )          
+    != render_partial( '_footer' )
   

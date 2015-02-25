@@ -1,0 +1,6 @@
+%ul.footer-content
+  %li ABOUT US
+  %li SUPPORT
+  %li PRIVACY
+  %li TERMS
+  %li &copy;2014 SIMPLYSOCIAL
