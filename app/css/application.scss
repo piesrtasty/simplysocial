@@ -467,7 +467,7 @@ form.new-post {
 }
 
 .content {
-  padding: 50px 55px 0 85px;
+  padding: 50px 55px 28px 85px;
   font-size: 14px;
   font-weight: 100;
   color: #70767F;
@@ -476,6 +476,11 @@ form.new-post {
     padding-bottom: 62px;
   }
 
+}
+
+.photo {
+  // width: 100%;
+  // height: 315px;
 }
 
 .post {
@@ -489,6 +494,11 @@ form.new-post {
     margin-bottom: 0;
     @include border-bottom-left-radius(0);
     @include border-bottom-right-radius(0);
+  }
+
+  &.photo-post {
+    border-bottom: none;
+    margin-bottom: 0;
   }
 
   // Post meta data moved from here

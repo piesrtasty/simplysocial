@@ -8,12 +8,14 @@ angular.module( 'app' ).controller
         timeAgo: "3m"
         content: "How to Get Inspired: the Right Way - Designmodo bit.ly/1lE4uJc Good stuff from @designmodo!"
         expandable: true
+        type: 'post'
+        photo: false
         comments: [
           {
             name: "Jed Bridges"
             avatar: "/avatars/jed-bridges-avatar.png"
             timeAgo: "1h"
-            content: "Jed Bridges Great way to start the week. Thanks for sharing!"
+            content: "Great way to start the week. Thanks for sharing!"
           },
           {
             name: "Ren Walker"
@@ -25,25 +27,14 @@ angular.module( 'app' ).controller
       },
 
       {
-        name: "Sam Soffes"
-        avatar: "/avatars/sam-soffes-avatar.png"
-        timeAgo: "3m"
-        content: "How to Get Inspired: the Right Way - Designmodo bit.ly/1lE4uJc Good stuff from @designmodo!"
-        expandable: true
-        comments: [
-          {
-            name: "Jed Bridges"
-            avatar: "/avatars/jed-bridges-avatar.png"
-            timeAgo: "1h"
-            content: "Jed Bridges Great way to start the week. Thanks for sharing!"
-          },
-          {
-            name: "Ren Walker"
-            avatar: "/avatars/ren-walker-avatar.png"
-            timeAgo: "1h"
-            content: "Ren Walker Feeling inspired now... thanks for great article @designmodo"
-          }
-        ]
+        name: "Meg Robichaud"
+        avatar: "/avatars/meg-robichaud.png"
+        timeAgo: "25m"
+        content: "My view this morning is simply beautiful... instagram.com/p/mV0PUrHRwQ/"
+        expandable: false
+        type: 'photo'
+        photo: true
+        photoUrl: '/photos/water-cove.png'
       }
     ]
 

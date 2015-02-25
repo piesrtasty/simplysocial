@@ -9,17 +9,19 @@
   %section.content-container
     .list-container
       .post-container{ ng-repeat: "post in posts"}
-        .post
+        .post{ ng-class: "{'photo-post': post.photo}" }
           .name {{post.name}}
-          %img.avatar{ src: "{{post.avatar}}"}
+          %img.avatar{ src: "{{post.avatar}}" }
           .content{ ng-class: "{expandable: post.expandable}" } {{post.content}}
           .collapse-post{ ng-show: "{{post.expandable}}", ng-click: "hideComments($event)" } Collapse
           .expand-post{ ng-show: "{{post.expandable}}", ng-click: "showComments($event)" } Expand
-          .expand-chevron
+          .expand-chevron{ ng-show: "{{post.expandable}}" }
+        .photo-container{ ng-if: "post.photo" }
+          %img.photo{ src: "{{post.photoUrl}}", ng-show: "{{post.photo}}" }
         .comment-container{ ng-if: "post.expandable"}
           .comment{ ng-repeat: "comment in post.comments" }
             .name {{comment.name}}
-            %img.avatar{ src: "{{post.avatar}}"}
+            %img.avatar{ src: "{{comment.avatar}}"}
             .content {{comment.content}}
           .new-comment
             %input.new-comment-content{ placeholder: "Reply..." }
