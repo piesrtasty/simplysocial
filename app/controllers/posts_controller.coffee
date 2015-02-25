@@ -1,5 +1,7 @@
 angular.module( 'app' ).controller
   postsController: ($rootScope, $scope, $location) ->
+ 
+     
 
     $scope.posts = [
       {
@@ -10,6 +12,7 @@ angular.module( 'app' ).controller
         expandable: true
         type: 'post'
         photo: false
+        video: false
         comments: [
           {
             name: "Jed Bridges"
@@ -25,7 +28,6 @@ angular.module( 'app' ).controller
           }
         ]
       },
-
       {
         name: "Meg Robichaud"
         avatar: "/avatars/meg-robichaud.png"
@@ -34,7 +36,39 @@ angular.module( 'app' ).controller
         expandable: false
         type: 'photo'
         photo: true
+        video: false
         photoUrl: '/photos/water-cove.png'
+      },
+      {
+        name: "Kerem Suer"
+        avatar: "/avatars/kerem-suer.png"
+        timeAgo: "50m"
+        content: "8 Apps to Turn Your Pipe Dreams Into Prototypes on.mash.to/1oubyu8"
+        expandable: false
+        type: 'post'
+        photo: false
+        video: false
+      },
+      {
+        name: "Liang Shi"
+        avatar: "/avatars/liang-shi.png"
+        timeAgo: "1h"
+        content: "How to get animations out of your head. http://bit.ly/1q7BngO Funny and useful."
+        expandable: false
+        type: 'post'
+        photo: false
+        video: false
+      },
+      {
+        name: "Vitor Leal"
+        avatar: "/avatars/vitor-leal.png"
+        timeAgo: "50m"
+        content: "You have to see this bike. It will make your daily commute a absolute joy ride! vimeo.com/p/mV0PUrHRwQ/"
+        expandable: false
+        type: 'post'
+        photo: false
+        video: true
+        videoUrl: '/videos/bike-river.png'
       }
     ]
 

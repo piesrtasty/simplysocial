@@ -86,6 +86,9 @@ $tile_list_view_icon_height: 9px;
 $list_container_width: 575px;
 $list_container_top_offset: 425px;
 
+// Play Button Icon
+$play_btn_icon_width: 30px;
+$play_btn_icon_height: 35px;
 
 /* -------------------------- */
 /*          Angular
@@ -489,6 +492,7 @@ form.new-post {
   position: relative;
   margin-bottom: 25px;
 
+  // TODO: Refactor these classes
   &.expanded {
     border-bottom: none;
     margin-bottom: 0;
@@ -499,6 +503,15 @@ form.new-post {
   &.photo-post {
     border-bottom: none;
     margin-bottom: 0;
+    @include border-bottom-left-radius(0);
+    @include border-bottom-right-radius(0);
+  }
+
+  &.video-post {
+    border-bottom: none;
+    margin-bottom: 0;
+    @include border-bottom-left-radius(0);
+    @include border-bottom-right-radius(0);
   }
 
   // Post meta data moved from here
@@ -541,11 +554,49 @@ form.new-post {
 
 }
 
+// TODO: Refactor these classes
 .comment-container {
   background-color: #F9FAFB;
   position: relative;
   margin-bottom: 25px;
   display: none;
+}
+
+.photo-container {
+  margin-bottom: 25px;
+}
+
+.video-container {
+  margin-bottom: 25px;
+  position: relative;
+
+  .play-circle {
+    height: 100px;
+    width: 100px;
+    border: 4px solid white;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    @include border-radius(50%);
+  }
+
+  .play-triangle {
+
+    position: absolute;
+    top: 134px;
+    left: 10px;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: $play_btn_icon_width;
+    height: $play_btn_icon_height;
+    background: url('/icons/play-btn-icon.png') no-repeat center;
+    @include image-2x('/icons/play-btn-icon@2x.png', $play_btn_icon_width, $play_btn_icon_height);
+  }
+
 }
 
 .comment  {

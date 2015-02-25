@@ -9,7 +9,7 @@
   %section.content-container
     .list-container
       .post-container{ ng-repeat: "post in posts"}
-        .post{ ng-class: "{'photo-post': post.photo}" }
+        .post{ ng-class: "{'photo-post': post.photo, 'video-post': post.video}" }
           .name {{post.name}}
           %img.avatar{ src: "{{post.avatar}}" }
           .content{ ng-class: "{expandable: post.expandable}" } {{post.content}}
@@ -18,6 +18,10 @@
           .expand-chevron{ ng-show: "{{post.expandable}}" }
         .photo-container{ ng-if: "post.photo" }
           %img.photo{ src: "{{post.photoUrl}}", ng-show: "{{post.photo}}" }
+        .video-container{ ng-if: "post.video" }
+          %img.video{ src: "{{post.videoUrl}}", ng-show: "{{post.video}}" }
+          .play-circle
+          .play-triangle
         .comment-container{ ng-if: "post.expandable"}
           .comment{ ng-repeat: "comment in post.comments" }
             .name {{comment.name}}
@@ -27,5 +31,4 @@
             %input.new-comment-content{ placeholder: "Reply..." }
             
           
-          
-      
+  
