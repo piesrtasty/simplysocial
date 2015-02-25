@@ -446,18 +446,24 @@ form.new-post {
 }
 
 
-
-
-
 /* -------------------------- */
-/*          Post
+/*         List View
 /* -------------------------- */
 
 
 .list-container .post {
-
-
+  // TODO: On toggle between tile and list views
 }
+
+/* -------------------------- */
+/*         Tile View
+/* -------------------------- */
+
+// TODO: Placeholder for tile view
+
+/* -------------------------- */
+/*  Common Posts / Comments 
+/* -------------------------- */
 
 .avatar {
   position: absolute;
@@ -517,7 +523,9 @@ form.new-post {
 
 }
 
-
+/* -------------------------- */
+/*         Post
+/* -------------------------- */
 
 .post {
   border: 1px solid $blue_gray4;
@@ -546,8 +554,6 @@ form.new-post {
     @include border-bottom-left-radius(0);
     @include border-bottom-right-radius(0);
   }
-
-  // Post meta data moved from here
 
   .expand-post {
     position: absolute;
@@ -587,50 +593,15 @@ form.new-post {
 
 }
 
-// TODO: Refactor these classes
+/* -------------------------- */
+/*     Post Comments
+/* -------------------------- */
+
 .comment-container {
   background-color: #F9FAFB;
   position: relative;
   margin-bottom: 25px;
   display: none;
-}
-
-.photo-container {
-  margin-bottom: 25px;
-}
-
-.video-container {
-  margin-bottom: 25px;
-  position: relative;
-
-  .play-circle {
-    height: 100px;
-    width: 100px;
-    border: 4px solid white;
-    position: absolute;
-    top: 100px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    cursor: pointer;
-    @include border-radius(50%);
-  }
-
-  .play-triangle {
-    cursor: pointer;
-    position: absolute;
-    top: 134px;
-    left: 10px;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    width: $play_btn_icon_width;
-    height: $play_btn_icon_height;
-    background: url('/icons/play-btn-icon.png') no-repeat center;
-    @include image-2x('/icons/play-btn-icon@2x.png', $play_btn_icon_width, $play_btn_icon_height);
-  }
-
 }
 
 .comment  {
@@ -680,31 +651,51 @@ form.new-post {
 
 }
 
+/* -------------------------- */
+/*     Post Photos
+/* -------------------------- */
 
-
-
-
-
-
-
-.Reply___ {
-  font-size: 14px;
-  font-family: "Open Sans";
-  color: rgb(190, 195, 204);
-  line-height: 1.286;
-  position: absolute;
-  left: 502.578px;
-  top: 930.498px;
-  z-index: 1012;
+.photo-container {
+  margin-bottom: 25px;
 }
 
+/* -------------------------- */
+/*     Post Videos
+/* -------------------------- */
 
+.video-container {
+  margin-bottom: 25px;
+  position: relative;
 
+  .play-circle {
+    height: 100px;
+    width: 100px;
+    border: 4px solid white;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    @include border-radius(50%);
+  }
 
+  .play-triangle {
+    cursor: pointer;
+    position: absolute;
+    top: 134px;
+    left: 10px;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: $play_btn_icon_width;
+    height: $play_btn_icon_height;
+    background: url('/icons/play-btn-icon.png') no-repeat center;
+    @include image-2x('/icons/play-btn-icon@2x.png', $play_btn_icon_width, $play_btn_icon_height);
+  }
 
-
-
-
+}
 
 
 

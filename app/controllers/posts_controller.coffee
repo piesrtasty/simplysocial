@@ -236,6 +236,7 @@ angular.module( 'app' ).controller
       $($event.target).parent().find('.expand-chevron').addClass('open')
       # Show the comment container
       $($event.target).parent().parent().find('.comment-container').show()
+      return
 
     $scope.hideComments = ($event) ->
       # Remove the bottom border and margin of the post when comments are open
@@ -246,3 +247,4 @@ angular.module( 'app' ).controller
       $($event.target).parent().find('.expand-chevron').removeClass('open')
       # Show the comment container
       $($event.target).parent().parent().find('.comment-container').hide()
+      return
