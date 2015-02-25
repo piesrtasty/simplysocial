@@ -8,9 +8,9 @@
 // Google Fonts
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
 
-// Color Palette 1 -> 4 = Darl -> Light
+// Color Palette 1 -> 4 = Dark -> Light
 $green1: #107E60;
-$green2: #343D41;
+$green2: #1BB187;
 $green3: #20CB9A;
 $green4: #57FED2;
 
@@ -30,6 +30,9 @@ $blue_gray3: #BEC3CB;
 $blue_gray4: #DEE1E5;
 $blue_gray5: #F4F5F7;
 
+// New Post Input Placeholder Color
+$new_post_input_placeholder_color: #9CDACA;
+
 // Top Nav
 $topnav_bg: #262729;
 $nav_icon_top_offset: 20px;
@@ -38,7 +41,6 @@ $nav_icon_top_offset: 20px;
 $icon_logo_width: 27px;
 $icon_logo_height: 25px;
 $icon_logo_left_offset: 100px;
-// $icon_logo_top_offset: 20px;
 
 // Text Logo
 $text_logo_left_offset: 13px;
@@ -62,6 +64,20 @@ $chevron_down_height: 4px;
 $search_icon_width: 16px;
 $search_icon_height: 16px;
 
+// New Post
+$new_post_width: 575px;
+$new_post_height: 156px;
+$new_post_top_offset: 123px;
+
+// Add Photo/Video Icons
+$add_photo_video_icon_width: 18px;
+$add_photo_video_icon_height: 13px;
+
+// Sub Nav
+$subnav_width: 575px;
+$subnav_height: 32px;
+$subnav_top_offset: 114px;
+
 /* -------------------------- */
 /*          Angular
 /* -------------------------- */
@@ -75,12 +91,12 @@ $search_icon_height: 16px;
 /* -------------------------- */
 
 * {
-  font-family: 'ProximaNova';
+  font-family: "Open Sans";
 }
 
 // Temporary
 body {
-  background-color: black;
+  background-color: white;
 }
 
 .block {
@@ -98,6 +114,24 @@ body {
 input:focus {
   outline: none;
 }
+
+::-webkit-input-placeholder {
+   color: $new_post_input_placeholder_color;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: $new_post_input_placeholder_color;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: $new_post_input_placeholder_color;  
+}
+
+:-ms-input-placeholder {  
+   color: $new_post_input_placeholder_color;  
+}
+
+
 
 /* -------------------------- */
 /*          Topnav
@@ -128,6 +162,7 @@ input:focus {
   left: $icon_logo_left_offset + $icon_logo_width + $text_logo_left_offset;
   top: $nav_icon_top_offset + $text_logo_top_offset;
   color: $green_gray3;
+  font-family: 'ProximaNova';
   font-size: 18px;
 }
 
@@ -173,7 +208,6 @@ input:focus {
 
 .current-user-avatar {
   position: absolute;
-  // right: 118px;
   right: 108px;
   top: 15px;
   width: $avatar_width + 10px;
@@ -238,12 +272,148 @@ input:focus {
 .hero {
   width: 100%;
   min-height: 425px;
-  // margin-top: $topnav_height;
+  position: absolute;
   background: url('/hero.png');
   background-size:cover;
   background-position:center center;
   background-repeat: no-repeat;
 }
+
+/* -------------------------- */
+/*          New Post
+/* -------------------------- */
+
+form.new-post {
+  width: $new_post_width;
+  height: $new_post_height;
+  @include border-radius(3px);
+  position: relative;
+  margin: 0 auto;
+  opacity: .7;
+  background-color: $green2;
+  margin-top: $new_post_top_offset;
+
+  input {
+    width: $new_post_width - (30 * 2);
+    position: absolute;
+    left: 29px;
+    top: 45px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 30px;
+    font-weight: 100;
+    border: none;
+    background-color: inherit;
+    color: white;
+  }
+
+  .add-media  {
+    width: $add_photo_video_icon_width;
+    height: $add_photo_video_icon_height;
+    bottom: 29px;
+    font-size: 14px;
+    opacity: .7;
+  }
+
+  .add-photo {
+    position: absolute;
+    left: 29px;
+    background: url('/icons/add-photo-icon.png') no-repeat center;
+    @include image-2x('/icons/add-photo-icon@2x.png', $add_photo_video_icon_width, $add_photo_video_icon_height);
+  }
+
+  .add-video {
+    position: absolute;
+    left: 170px;
+    background: url('/icons/add-video-icon.png') no-repeat center;
+    @include image-2x('/icons/add-video-icon@2x.png', $add_photo_video_icon_width, $add_photo_video_icon_height);
+  }
+
+  .add-media-label {
+    font-size: 14px;
+    position: absolute;
+    bottom: 29px;
+    height:  $add_photo_video_icon_height;
+    line-height: 16px;
+    color: $new_post_input_placeholder_color;
+    font-weight: 100;
+
+    &.add-photo-label {
+      left: 29px + 9px + $add_photo_video_icon_width;
+    }
+
+    &.add-video-label {
+      left: 170px + 9px + $add_photo_video_icon_width;
+    }
+
+  }
+}
+
+/* -------------------------- */
+/*          Sub Nav
+/* -------------------------- */
+
+.subnav {
+  width: $subnav_width;
+  height: $subnav_height;
+  position: relative;
+  margin: 0 auto;
+  margin-top: $subnav_top_offset;
+
+  .nav-item {
+    display: inline-block;
+    color: white;
+    opacity: .7;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    width: 88px;
+    text-align: center;
+    height: 24.5px;
+
+    &.selected {
+      opacity: 1;
+      border-bottom: 3px solid #1FCB9A;
+    }
+
+    &:not(.selected)  {
+      cursor: pointer;
+    }
+
+  }
+
+}
+
+
+.All_Posts________________Photos________________ {
+  font-size: 12px;
+  font-family: "Open Sans";
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.5;
+  position: absolute;
+  left: 475px;
+  top: 448.5px;
+  z-index: 1747;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

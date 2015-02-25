@@ -1,0 +1,7 @@
+.subnav
+  .nav-item.selected ALL POSTS
+  .nav-item PHOTOS
+  .nav-item VIDEOS
+    -# %li 
+    -# %li 
+    -# %li 

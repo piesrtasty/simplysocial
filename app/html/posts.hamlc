@@ -3,4 +3,5 @@
   != render_partial( '_topnav', {className: 'opaque fixed'} )
 
   %section.hero
-    .inner-hero
+    != render_partial( '_new_post' )
+    != render_partial ( '_subnav' )
