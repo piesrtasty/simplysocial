@@ -235,6 +235,13 @@ angular.module( 'app' ).controller
       $('.modal').removeClass('ng-hide')
       return
       
+    $scope.closeModal = () ->
+      $scope.modalOpen = false
+      $('.wrapper').removeClass('modal-open')
+      $('.modal-overlay').addClass('ng-hide')
+      $('.modal').addClass('ng-hide')
+      return
+
     # TODO: Refactor into a directive
     $scope.showComments = ($event) ->
       # Remove the bottom border and margin of the post when comments are open

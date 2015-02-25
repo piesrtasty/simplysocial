@@ -106,6 +106,11 @@ $footer_top_offset: 100px; // This is the measurement from invision prototype @ 
 $close_icon_width: 21px;
 $close_icon_height: 21px;
 
+// Modal
+$modal_content_width: 575px;
+$modal_content_height: 215px;
+$modal_content_offset: 21px;
+
 /* -------------------------- */
 /*          Angular
 /* -------------------------- */
@@ -759,13 +764,8 @@ form.new-post {
 }
 
 /* -------------------------- */
-/*        Footer
+/*        Modal
 /* -------------------------- */
-
-
-$modal_content_width: 575px;
-$modal_content_height: 215px;
-$modal_content_offset: 21px;
 
 .modal-overlay  {
   position: absolute;
@@ -788,20 +788,32 @@ $modal_content_offset: 21px;
 }
 
 .modal-wrapper  {
-    width: $modal_content_width + ($modal_content_offset * 2);
-    height: $modal_content_height + ($modal_content_offset * 2);
-    border: 1px solid white;
-    margin: 0 auto;
-    margin-top: 162px;
-    z-index: 999;
+  position: relative;
+  width: $modal_content_width;
+  height: $modal_content_height;
+  padding: $modal_content_offset;
+  margin: 0 auto;
+  margin-top: 162px;
+  z-index: 999;
 
-    .modal-content  {
-      background-color: $blue_gray4;
-      height: $modal_content_height;
-      width: $modal_content_width;
-      margin: 0 auto;
-      margin-top: $modal_content_offset;
-    }
+  .close-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    width: $close_icon_width;
+    height: $close_icon_height;
+    background: url('/icons/close-icon.png') no-repeat center;
+    @include image-2x('/icons/close-icon@2x.png', $close_icon_width, $close_icon_height);
+  }
+
+  .modal-content  {
+    background-color: $blue_gray4;
+    height: $modal_content_height;
+    width: $modal_content_width;
+    margin: 0 auto;
+    @include border-radius(3px);
+  }
 
 }
 

@@ -45,4 +45,5 @@
 %section.modal-overlay{ ng-show: "{{modalOpen}}" }
 .modal{ ng-show: "{{modalOpen}}" }
   .modal-wrapper
+    .close-modal{ ng-click: "closeModal()" }
     .modal-content
