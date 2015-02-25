@@ -69,7 +69,7 @@ $new_post_width: 575px;
 $new_post_height: 156px;
 $new_post_top_offset: 123px;
 
-// Add Photo/Video Icons
+// Add Photo / Video Icons
 $add_photo_video_icon_width: 18px;
 $add_photo_video_icon_height: 13px;
 
@@ -77,6 +77,10 @@ $add_photo_video_icon_height: 13px;
 $subnav_width: 575px;
 $subnav_height: 32px;
 $subnav_top_offset: 114px;
+
+// Tile / List View Icons
+$tile_list_view_icon_width: 9px;
+$tile_list_view_icon_height: 9px;
 
 /* -------------------------- */
 /*          Angular
@@ -190,7 +194,6 @@ input:focus {
   background-color: $topnav_bg;
   border: 1px solid $green_gray2;
   width: 198px;
-  // height: 28px;
   height: 26px;
   @include border-radius(4px);
 }
@@ -337,6 +340,7 @@ form.new-post {
     line-height: 16px;
     color: $new_post_input_placeholder_color;
     font-weight: 100;
+    letter-spacing: .75px;
 
     &.add-photo-label {
       left: 29px + 9px + $add_photo_video_icon_width;
@@ -382,20 +386,31 @@ form.new-post {
 
   }
 
-}
+  .toggle-post-layout {
+    position: absolute;
+    top: 8px;
+    opacity: .7;
+    width: $tile_list_view_icon_width;
+    height: $tile_list_view_icon_height;
 
+    &.selected {
+      opacity: 1;
+    }
 
-.All_Posts________________Photos________________ {
-  font-size: 12px;
-  font-family: "Open Sans";
-  color: rgb(255, 255, 255);
-  font-weight: bold;
-  text-transform: uppercase;
-  line-height: 1.5;
-  position: absolute;
-  left: 475px;
-  top: 448.5px;
-  z-index: 1747;
+    &.list-view {
+      right: 15px + $tile_list_view_icon_width;
+      background: url('/icons/list-view-icon.png') no-repeat center;
+      @include image-2x('/icons/list-view-icon@2x.png', $tile_list_view_icon_width, $tile_list_view_icon_height);
+    }
+
+    &.tile-view {
+      right: 0;
+      background: url('/icons/tile-view-icon.png') no-repeat center;
+      @include image-2x('/icons/tile-view-icon@2x.png', $tile_list_view_icon_width, $tile_list_view_icon_height);
+    }
+
+  }
+
 }
 
 

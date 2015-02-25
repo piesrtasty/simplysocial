@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title Colors
+    %title SimplySocial
     
   %body{ ng-app: 'app', ng-init:"test='xxx'" }
     != @body
