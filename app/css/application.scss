@@ -452,37 +452,46 @@ form.new-post {
 
 }
 
+.avatar {
+  position: absolute;
+  left: 26px;
+  top: 26px;
+}
+
+.name {
+  position: absolute;
+  left: 85px;
+  top: 22px;
+  color: #3F454D;
+  font-weight: 100;
+}
+
+.content {
+  padding: 50px 55px 0 85px;
+  font-size: 14px;
+  font-weight: 100;
+  color: #70767F;
+
+  &.expandable {
+    padding-bottom: 62px;
+  }
+
+}
+
 .post {
   border: 1px solid $blue_gray4;
   @include border-radius(4px);
   position: relative;
   margin-bottom: 25px;
 
-  .avatar {
-    position: absolute;
-    left: 26px;
-    top: 26px;
+  &.expanded {
+    border-bottom: none;
+    margin-bottom: 0;
+    @include border-bottom-left-radius(0);
+    @include border-bottom-right-radius(0);
   }
 
-  .name {
-    position: absolute;
-    left: 85px;
-    top: 22px;
-    color: #3F454D;
-    font-weight: 100;
-  }
-
-  .content {
-    padding: 50px 55px 0 85px;
-    font-size: 14px;
-    font-weight: 100;
-    color: #70767F;
-
-    &.expandable {
-      padding-bottom: 62px;
-    }
-
-  }
+  // Post meta data moved from here
 
   .expand-post {
     position: absolute;
@@ -491,6 +500,18 @@ form.new-post {
     font-size: 10px;
     font-weight: 100;
     color: #BBBFC8;
+    cursor: pointer;
+  }
+
+  .collapse-post  {
+    position: absolute;
+    left: 85px;
+    bottom: 24px;
+    font-size: 10px;
+    font-weight: 100;
+    color: #BBBFC8;
+    cursor: pointer;
+    display: none;
   }
 
   .expand-chevron {
@@ -510,6 +531,55 @@ form.new-post {
 
 }
 
+.comment-container {
+  background-color: #F9FAFB;
+  position: relative;
+  margin-bottom: 25px;
+  display: none;
+}
+
+.comment  {
+  border: 1px solid $blue_gray4;
+  border-bottom: none;
+  position: relative;
+  padding-bottom: 29px;
+}
+
+.new-comment {
+
+  padding: 26px 25px 26px 25px;
+  border: 1px solid $blue_gray4;
+  @include border-bottom-left-radius(4px);
+  @include border-bottom-right-radius(4px);
+
+  ::-webkit-input-placeholder {
+   color: #DEE1E5;
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+    color: #DEE1E5;  
+  }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+    color: #DEE1E5;  
+  }
+
+  :-ms-input-placeholder {  
+    color: #DEE1E5;  
+  }
+
+  input {
+    font-size: 14px;
+    color: #70767F;
+    padding: 5px;
+    width: 525px;  
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #DEE1E5;
+    @include border-radius(3px);
+  }
+
+}
 
 
 
@@ -518,15 +588,15 @@ form.new-post {
 
 
 
-.Expand {
-  font-size: 12px;
+.Reply___ {
+  font-size: 14px;
   font-family: "Open Sans";
   color: rgb(190, 195, 204);
-  line-height: 2;
+  line-height: 1.286;
   position: absolute;
-  left: 544.766px;
-  top: 673.717px;
-  z-index: 992;
+  left: 502.578px;
+  top: 930.498px;
+  z-index: 1012;
 }
 
 

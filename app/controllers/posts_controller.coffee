@@ -1,12 +1,13 @@
 angular.module( 'app' ).controller
   postsController: ($rootScope, $scope, $location) ->
 
-  	$scope.posts = [
-  		{
+    $scope.posts = [
+      {
         name: "Sam Soffes"
         avatar: "/avatars/sam-soffes-avatar.png"
         timeAgo: "3m"
         content: "How to Get Inspired: the Right Way - Designmodo bit.ly/1lE4uJc Good stuff from @designmodo!"
+        expandable: true
         comments: [
           {
             name: "Jed Bridges"
@@ -28,6 +29,7 @@ angular.module( 'app' ).controller
         avatar: "/avatars/sam-soffes-avatar.png"
         timeAgo: "3m"
         content: "How to Get Inspired: the Right Way - Designmodo bit.ly/1lE4uJc Good stuff from @designmodo!"
+        expandable: true
         comments: [
           {
             name: "Jed Bridges"
@@ -43,4 +45,25 @@ angular.module( 'app' ).controller
           }
         ]
       }
-  	]
+    ]
+
+    # TODO: Refactor into a directive
+    $scope.showComments = ($event) ->
+      # Remove the bottom border and margin of the post when comments are open
+      $($event.target).parent().addClass('expanded')
+      # Toggle Expan / Collapse
+      $($event.target).parent().find('.collapse-post').show()
+      $($event.target).parent().find('.expand-post').hide()
+      $($event.target).parent().find('.expand-chevron').addClass('open')
+      # Show the comment container
+      $($event.target).parent().parent().find('.comment-container').show()
+
+    $scope.hideComments = ($event) ->
+      # Remove the bottom border and margin of the post when comments are open
+      $($event.target).parent().removeClass('expanded')
+      # Toggle Expan / Collapse
+      $($event.target).parent().find('.collapse-post').hide()
+      $($event.target).parent().find('.expand-post').show()
+      $($event.target).parent().find('.expand-chevron').removeClass('open')
+      # Show the comment container
+      $($event.target).parent().parent().find('.comment-container').hide()
