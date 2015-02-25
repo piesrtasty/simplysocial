@@ -11,6 +11,10 @@
       .post-container{ ng-repeat: "post in posts"}
         .post{ ng-class: "{'photo-post': post.photo, 'video-post': post.video}" }
           .name {{post.name}}
+          .calls-to-action
+            .call-to-action.call-to-action-icon.reply-cta-icon
+            .call-to-action.call-to-action-icon.like-cta-icon
+            .call-to-action {{post.timeAgo}}
           %img.avatar{ src: "{{post.avatar}}" }
           .content{ ng-class: "{expandable: post.expandable}" } {{post.content}}
           .collapse-post{ ng-show: "{{post.expandable}}", ng-click: "hideComments($event)" } Collapse
@@ -25,6 +29,10 @@
         .comment-container{ ng-if: "post.expandable"}
           .comment{ ng-repeat: "comment in post.comments" }
             .name {{comment.name}}
+            .calls-to-action
+              .call-to-action.call-to-action-icon.reply-cta-icon
+              .call-to-action.call-to-action-icon.like-cta-icon
+              .call-to-action {{comment.timeAgo}}
             %img.avatar{ src: "{{comment.avatar}}"}
             .content {{comment.content}}
           .new-comment

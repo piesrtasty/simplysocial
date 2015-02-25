@@ -90,6 +90,10 @@ $list_container_top_offset: 425px;
 $play_btn_icon_width: 30px;
 $play_btn_icon_height: 35px;
 
+// Post Call To Action Icons
+$post_cta_icon_width: 13px;
+$post_cta_icon_height: 13px;
+
 /* -------------------------- */
 /*          Angular
 /* -------------------------- */
@@ -481,10 +485,39 @@ form.new-post {
 
 }
 
-.photo {
-  // width: 100%;
-  // height: 315px;
+.calls-to-action {
+  position: absolute;
+  right: 20px;
+  top: 24px;
+  font-size: 14px;
+  color: #CBCFD6;
+  font-weight: 100;
+
+  .call-to-action {
+    margin-left: 23px;
+    display: inline-block;
+
+    &.call-to-action-icon {
+      width: $post_cta_icon_width;
+      height: $post_cta_icon_height;
+      cursor: pointer;
+    }
+
+    &.reply-cta-icon {
+      background: url('/icons/reply-icon.png') no-repeat center;
+      @include image-2x('/icons/reply-icon@2x.png', $post_cta_icon_width, $post_cta_icon_height);
+    }
+
+    &.like-cta-icon {
+      background: url('/icons/like-icon.png') no-repeat center;
+      @include image-2x('/icons/like-icon@2x.png', $post_cta_icon_width, $post_cta_icon_height);
+    }
+
+  }
+
 }
+
+
 
 .post {
   border: 1px solid $blue_gray4;
