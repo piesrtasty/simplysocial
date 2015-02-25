@@ -1,6 +1,6 @@
 %section.wrapper
 
-  %section.head%r
+  %section.header
     != render_partial( '_topnav', {className: 'opaque fixed'} )
 
   %section.hero
@@ -41,4 +41,8 @@
             
   %section.footer
     != render_partial( '_footer' )
-  
+
+%section.modal-overlay{ ng-show: "{{modalOpen}}" }
+.modal{ ng-show: "{{modalOpen}}" }
+  .modal-wrapper
+    .modal-content

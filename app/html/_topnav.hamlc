@@ -1,4 +1,4 @@
-.topnav{ ng-controller: 'topNavController' }
+.topnav{ ng-controller: 'postsController' }
 	.icon-logo
 	.text-logo simply
 

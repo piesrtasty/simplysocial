@@ -102,6 +102,10 @@ $footer_height: 130px;
 // $footer_top_offset: 143px; // This is the measurement from the PSD
 $footer_top_offset: 100px; // This is the measurement from invision prototype @ http://invis.io/5RU0VXJY
 
+// Close Icon
+$close_icon_width: 21px;
+$close_icon_height: 21px;
+
 /* -------------------------- */
 /*          Angular
 /* -------------------------- */
@@ -121,6 +125,11 @@ $footer_top_offset: 100px; // This is the measurement from invision prototype @ 
 // Temporary
 body {
   background-color: white;
+
+  // &.modal-open  {
+  //   overflow: hidden;
+  // }
+
 }
 
 .block {
@@ -155,7 +164,18 @@ input:focus {
    color: $new_post_input_placeholder_color;  
 }
 
+/* -------------------------- */
+/*          Wrapper
+/* -------------------------- */
 
+.wrapper {
+
+  &.modal-open  {
+    overflow: hidden;
+    @include blur(5px);
+  }
+  
+}
 
 /* -------------------------- */
 /*          Topnav
@@ -707,7 +727,7 @@ form.new-post {
 }
 
 /* -------------------------- */
-/*     Footer
+/*        Footer
 /* -------------------------- */
 
 .footer {
@@ -738,11 +758,52 @@ form.new-post {
 
 }
 
+/* -------------------------- */
+/*        Footer
+/* -------------------------- */
 
 
+$modal_content_width: 575px;
+$modal_content_height: 215px;
+$modal_content_offset: 21px;
 
+.modal-overlay  {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  opacity: .8;
+  z-index: 99;
+}
 
+.modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+}
 
+.modal-wrapper  {
+    width: $modal_content_width + ($modal_content_offset * 2);
+    height: $modal_content_height + ($modal_content_offset * 2);
+    border: 1px solid white;
+    margin: 0 auto;
+    margin-top: 162px;
+    z-index: 999;
+
+    .modal-content  {
+      background-color: $blue_gray4;
+      height: $modal_content_height;
+      width: $modal_content_width;
+      margin: 0 auto;
+      margin-top: $modal_content_offset;
+    }
+
+}
 
 
 

@@ -18,3 +18,12 @@
   -ms-transform: rotate($degrees);
   transform: rotate($degrees);
 }
+
+@mixin blur($size) {
+  -webkit-filter: blur($size);
+  -moz-filter: blur($size);
+  -o-filter: blur($size);
+  -ms-filter: blur($size);
+  filter: blur($size);
+  // opacity: .4;
+}
