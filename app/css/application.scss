@@ -580,11 +580,12 @@ form.new-post {
     right: 0;
     margin-left: auto;
     margin-right: auto;
+    cursor: pointer;
     @include border-radius(50%);
   }
 
   .play-triangle {
-
+    cursor: pointer;
     position: absolute;
     top: 134px;
     left: 10px;
@@ -603,7 +604,11 @@ form.new-post {
   border: 1px solid $blue_gray4;
   border-bottom: none;
   position: relative;
-  padding-bottom: 29px;
+
+  .content {
+    padding-bottom: 28px;
+  }
+
 }
 
 .new-comment {
