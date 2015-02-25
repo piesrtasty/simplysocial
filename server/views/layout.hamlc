@@ -10,6 +10,5 @@
   != css( 'fonts' )
   != js( 'bower' )
   != js( 'application' )
-  -# %script{ src: '/socket.io/socket.io.js' }
   - unless process.env.NODE_ENV is 'production'
     %script{ src: "//localhost:35729/livereload.js" }

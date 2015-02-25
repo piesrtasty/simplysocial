@@ -5,3 +5,14 @@
   %section.hero
     != render_partial( '_new_post' )
     != render_partial ( '_subnav' )
+
+  %section.content-container
+    .list-container
+      .post{ ng-repeat: "post in posts"}
+        .name {{post.name}}
+        %img.avatar{ src: "{{post.avatar}}"}
+        .content{ ng-class: "{expandable: post.comments != null}" } {{post.content}}
+        .expand-post{ ng-show: "{post.comments != null}" } Expand
+        .expand-chevron.open
+      
+      

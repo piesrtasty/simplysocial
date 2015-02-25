@@ -2,5 +2,5 @@
   .nav-item.selected ALL POSTS
   .nav-item PHOTOS
   .nav-item VIDEOS
-  .list-view.toggle-post-layout
-  .tile-view.toggle-post-layout.selected
+  .list-view.toggle-post-layout.selected
+  .tile-view.toggle-post-layout

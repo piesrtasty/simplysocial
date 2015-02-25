@@ -82,6 +82,11 @@ $subnav_top_offset: 114px;
 $tile_list_view_icon_width: 9px;
 $tile_list_view_icon_height: 9px;
 
+// List Container
+$list_container_width: 575px;
+$list_container_top_offset: 425px;
+
+
 /* -------------------------- */
 /*          Angular
 /* -------------------------- */
@@ -397,6 +402,10 @@ form.new-post {
       opacity: 1;
     }
 
+    &:not(.selected)  {
+      cursor: pointer;
+    }
+
     &.list-view {
       right: 15px + $tile_list_view_icon_width;
       background: url('/icons/list-view-icon.png') no-repeat center;
@@ -413,6 +422,93 @@ form.new-post {
 
 }
 
+/* -------------------------- */
+/*       List Container
+/* -------------------------- */
+
+.content-container {
+  position: absolute;
+  top: $list_container_top_offset;
+  width: 100%;
+}
+
+.list-container {
+  width: $list_container_width;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+
+
+
+
+/* -------------------------- */
+/*          Post
+/* -------------------------- */
+
+
+.list-container .post {
+
+
+}
+
+.post {
+  border: 1px solid $blue_gray4;
+  @include border-radius(4px);
+  position: relative;
+  margin-bottom: 25px;
+
+  .avatar {
+    position: absolute;
+    left: 26px;
+    top: 26px;
+  }
+
+  .name {
+    position: absolute;
+    left: 85px;
+    top: 22px;
+    color: #3F454D;
+    font-weight: 100;
+  }
+
+  .content {
+    padding: 50px 55px 0 85px;
+    font-size: 14px;
+    font-weight: 100;
+    color: #70767F;
+
+    &.expandable {
+      padding-bottom: 62px;
+    }
+
+  }
+
+  .expand-post {
+    position: absolute;
+    left: 85px;
+    bottom: 24px;
+    font-size: 10px;
+    font-weight: 100;
+    color: #BBBFC8;
+  }
+
+  .expand-chevron {
+    position: absolute;
+    left: 132px;
+    bottom: 28.5px;
+    width: $chevron_down_width;
+    height: $chevron_down_height;
+    background: url('/icons/chevron-down.png') no-repeat center;
+    @include image-2x('/icons/chevron-down@2x.png', $chevron_down_width, $chevron_down_height);
+
+    &.open {
+      @include rotate(180deg);
+    }
+
+  }
+
+}
 
 
 
@@ -422,18 +518,16 @@ form.new-post {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+.Expand {
+  font-size: 12px;
+  font-family: "Open Sans";
+  color: rgb(190, 195, 204);
+  line-height: 2;
+  position: absolute;
+  left: 544.766px;
+  top: 673.717px;
+  z-index: 992;
+}
 
 
 
