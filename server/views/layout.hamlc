@@ -10,8 +10,8 @@
   != css( 'fonts' )
   != js( 'bower' )
   != js( 'application' )
-  - unless process.env.NODE_ENV is 'production'
-    %script{ src: "//localhost:35729/livereload.js" }
+  -# - unless process.env.NODE_ENV is 'production'
+  -#   %script{ src: "//localhost:35729/livereload.js" }
 
   %script
     (function(i, s, o, g, r, a, m) {
