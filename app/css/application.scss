@@ -270,6 +270,8 @@ button:focus  {
   width: 198px;
   height: 26px;
   @include border-radius(4px);
+  color: $blue_gray4;
+  font-weight: 100;
 }
 
 .search-icon {
