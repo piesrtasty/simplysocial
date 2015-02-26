@@ -134,7 +134,7 @@ $settings_avatar_height: 85px;
 // Temporary
 body {
   background-color: white;
-
+  min-width: 800px;
   // &.modal-open  {
   //   overflow: hidden;
   // }
@@ -213,6 +213,7 @@ button:focus  {
 /* -------------------------- */
 
 .topnav {
+  min-width: 800px;
   z-index: 5;
   position: fixed;
   top: 0;
@@ -337,7 +338,7 @@ button:focus  {
 
     a {
       text-decoration: none;
-      color: $blue_gray4;
+      color: #3E454D;
     }
 
   }
@@ -353,6 +354,7 @@ button:focus  {
 /* -------------------------- */
 
 .hero {
+  min-width: 800px;
   width: 100%;
   min-height: 425px;
   position: absolute;
@@ -458,6 +460,10 @@ form.new-post {
     text-align: center;
     height: 24.5px;
 
+    a {
+      text-decoration: none;
+    }
+
     &.selected {
       opacity: 1;
       border-bottom: 3px solid #1FCB9A;
@@ -508,12 +514,32 @@ form.new-post {
   margin-top: $content_container_top_offset;
   top: $list_container_top_offset;
   width: 100%;
+
+
+
 }
 
 .list-container {
   width: $list_container_width;
   margin: 0 auto;
   margin-top: 50px + $content_container_top_offset;
+  &.photos {
+    width: 1175px;
+    // margin: 0 auto;
+    display: -ms-flexbox;
+    -ms-flex-direction: column;
+    -ms-flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100vw;
+    font-size: 0;
+
+    @media all and (max-width: 1650px) { 
+      height: 150vw;
+    }
+
+  }
 }
 
 
@@ -598,11 +624,18 @@ form.new-post {
 /*         Post
 /* -------------------------- */
 
+
 .post {
   border: 1px solid $blue_gray4;
   @include border-radius(4px);
   position: relative;
   margin-bottom: 25px;
+
+  &.photos {
+    width: 375px;
+    // width: 33.3%;
+    // transition: .8s opacity;
+  }
 
   // TODO: Refactor these classes
   &.expanded {
@@ -727,6 +760,28 @@ form.new-post {
 
 .photo-container {
   margin-bottom: 25px;
+
+  .photo {
+
+    border-bottom-left-radius: none;
+    border-bottom-right-radius: none;
+    &.photos {
+      width: 376px;
+    }
+
+  }
+
+}
+
+.photo-footer {
+  height: 57px;
+  border: 1px solid #DEE1E5;
+  border-top: none;
+  width: 375px;
+  margin-bottom: 25px;
+  margin-top: -30px;
+  @include border-radius(3px);
+  position: relative;
 }
 
 /* -------------------------- */
@@ -736,6 +791,15 @@ form.new-post {
 .video-container {
   margin-bottom: 25px;
   position: relative;
+
+  .video {
+
+    &.photos {
+      width: 375px;
+    }
+
+  }
+
 
   .play-circle {
     height: 100px;

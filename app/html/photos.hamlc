@@ -1,0 +1,62 @@
+%section.wrapper
+
+  %section.header
+    != render_partial( '_topnav', {className: 'opaque fixed'} )
+
+  %section.hero
+    != render_partial( '_new_post' )
+    .subnav
+      .nav-item 
+        %a{ href:'/' } ALL POSTS
+      .nav-item.selected 
+        %a{ href:'/photos' } PHOTOS
+      .nav-item VIDEOS
+      .list-view.toggle-post-layout.selected
+      .tile-view.toggle-post-layout
+
+  %section.content-container
+    .list-container.photos
+      .post-container.photos{ ng-repeat: "post in photos"}
+        .post.photos{ ng-class: "{'photo-post': post.photo, 'video-post': post.video}" }
+          .name {{post.name}}
+          %img.avatar{ src: "{{post.avatar}}" }
+          .content{ ng-class: "{expandable: post.expandable}" } {{post.content}}
+          .collapse-post{ ng-show: "{{post.expandable}}", ng-click: "hideComments($event)" } Collapse
+          .expand-post{ ng-show: "{{post.expandable}}", ng-click: "showComments($event)" } Expand
+          .expand-chevron{ ng-show: "{{post.expandable}}" }
+        .photo-container{ ng-if: "post.photo" }
+          %img.photo.photos{ src: "{{post.photoUrl}}", ng-show: "{{post.photo}}" }
+        .photo-footer
+          .calls-to-action
+            .call-to-action.call-to-action-icon.reply-cta-icon
+            .call-to-action.call-to-action-icon.like-cta-icon
+            .call-to-action {{post.timeAgo}}
+        .video-container{ ng-if: "post.video" }
+          %img.video.photos{ src: "{{post.videoUrl}}", ng-show: "{{post.video}}" }
+          .play-circle
+          .play-triangle
+        .comment-container{ ng-if: "post.expandable"}
+          .comment{ ng-repeat: "comment in post.comments" }
+            .name {{comment.name}}
+            .calls-to-action
+              .call-to-action.call-to-action-icon.reply-cta-icon
+              .call-to-action.call-to-action-icon.like-cta-icon
+              .call-to-action {{comment.timeAgo}}
+            %img.avatar{ src: "{{comment.avatar}}"}
+            .content {{comment.content}}
+          .new-comment
+            %input.new-comment-content{ placeholder: "Reply..." }
+            
+  %section.footer
+    != render_partial( '_footer' )
+
+%section.modal-overlay{ ng-show: "{{modalOpen}}" }
+.modal{ ng-show: "{{modalOpen}}" }
+  .modal-wrapper
+    .close-modal{ ng-click: "closeModal()" }
+    .modal-content
+      .add-media-container
+        != render_partial( '_add_media' )
+      %label Create new message
+      %textarea
+      %button Post

@@ -1,6 +1,8 @@
 .subnav
-  .nav-item.selected ALL POSTS
-  .nav-item PHOTOS
+  .nav-item.selected 
+    %a{ href:'/' } ALL POSTS
+  .nav-item 
+    %a{ href:'/photos' } PHOTOS
   .nav-item VIDEOS
   .list-view.toggle-post-layout.selected
   .tile-view.toggle-post-layout

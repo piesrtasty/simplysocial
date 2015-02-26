@@ -1,6 +1,141 @@
 angular.module( 'app' ).controller
   postsController: ($rootScope, $scope, $location, $window) ->
  
+    $scope.photos = [
+      {
+        name: "Meg Robichaud"
+        avatar: "/avatars/meg-robichaud.png"
+        timeAgo: "25m"
+        content: "My view this morning is simply beautiful... instagram.com/p/mV0PUrHRwQ/"
+        expandable: false
+        type: 'photo'
+        photo: true
+        video: false
+        photoUrl: '/photos/water-cove.png'
+      },
+      {
+        name: "Jenny Shen"
+        avatar: "/avatars/jenny-shen.png"
+        timeAgo: "25m"
+        content: "Perfect day to be outside taking pictures instagram.com/p/mV0PUrHRwQ/"
+        expandable: false
+        type: 'photo'
+        photo: true
+        video: false
+        photoUrl: '/photos/sun-hair.png'
+      },
+      {
+        name: "Buzz Usborne"
+        avatar: "/avatars/buzz-usborne.png"
+        timeAgo: "25m"
+        content: "Road trip!  bit.ly/1hkXFdK"
+        expandable: false
+        type: 'photo'
+        photo: true
+        video: false
+        photoUrl: '/photos/bus-photo.png'
+      },
+      {
+        name: "Samihah Azim"
+        avatar: "/avatars/samihah-azim.png"
+        timeAgo: "25m"
+        content: "Love this picture instagram.com/p/mV0PUrHRwQ/"
+        expandable: false
+        type: 'photo'
+        photo: true
+        video: false
+        photoUrl: '/photos/flower-photo.png'
+      },
+      {
+        name: "Meg Robichaud"
+        avatar: "/avatars/meg-robichaud.png"
+        timeAgo: "25m"
+        content: "My view this morning is simply beautiful... instagram.com/p/mV0PUrHRwQ/"
+        expandable: false
+        type: 'photo'
+        photo: true
+        video: false
+        photoUrl: '/photos/water-cove.png'
+      },
+      {
+        name: "Jenny Shen"
+        avatar: "/avatars/jenny-shen.png"
+        timeAgo: "25m"
+        content: "Perfect day to be outside taking pictures instagram.com/p/mV0PUrHRwQ/"
+        expandable: false
+        type: 'photo'
+        photo: true
+        video: false
+        photoUrl: '/photos/sun-hair.png'
+      },
+      {
+        name: "Buzz Usborne"
+        avatar: "/avatars/buzz-usborne.png"
+        timeAgo: "25m"
+        content: "Road trip!  bit.ly/1hkXFdK"
+        expandable: false
+        type: 'photo'
+        photo: true
+        video: false
+        photoUrl: '/photos/bus-photo.png'
+      },
+      {
+        name: "Samihah Azim"
+        avatar: "/avatars/samihah-azim.png"
+        timeAgo: "25m"
+        content: "Love this picture instagram.com/p/mV0PUrHRwQ/"
+        expandable: false
+        type: 'photo'
+        photo: true
+        video: false
+        photoUrl: '/photos/flower-photo.png'
+      },
+      {
+        name: "Meg Robichaud"
+        avatar: "/avatars/meg-robichaud.png"
+        timeAgo: "25m"
+        content: "My view this morning is simply beautiful... instagram.com/p/mV0PUrHRwQ/"
+        expandable: false
+        type: 'photo'
+        photo: true
+        video: false
+        photoUrl: '/photos/water-cove.png'
+      },
+      {
+        name: "Jenny Shen"
+        avatar: "/avatars/jenny-shen.png"
+        timeAgo: "25m"
+        content: "Perfect day to be outside taking pictures instagram.com/p/mV0PUrHRwQ/"
+        expandable: false
+        type: 'photo'
+        photo: true
+        video: false
+        photoUrl: '/photos/sun-hair.png'
+      },
+      {
+        name: "Buzz Usborne"
+        avatar: "/avatars/buzz-usborne.png"
+        timeAgo: "25m"
+        content: "Road trip!  bit.ly/1hkXFdK"
+        expandable: false
+        type: 'photo'
+        photo: true
+        video: false
+        photoUrl: '/photos/bus-photo.png'
+      },
+      {
+        name: "Samihah Azim"
+        avatar: "/avatars/samihah-azim.png"
+        timeAgo: "25m"
+        content: "Love this picture instagram.com/p/mV0PUrHRwQ/"
+        expandable: false
+        type: 'photo'
+        photo: true
+        video: false
+        photoUrl: '/photos/flower-photo.png'
+      }
+    ]
+
     $scope.posts = [
       {
         name: "Sam Soffes"
@@ -224,6 +359,11 @@ angular.module( 'app' ).controller
     
     $scope.menuOpen = false
     $scope.modalOpen = false
+
+    $selectNav = (route) ->
+      $('.nav-item').removeClass('selected')
+      console.log 'hi'
+
 
     $scope.goHome = () ->
       $window.location.href = "/"
