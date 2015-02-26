@@ -373,6 +373,7 @@ angular.module( 'app' ).controller
     $scope.newMessage = () ->
       $scope.modalOpen = true
       $('.wrapper').addClass('modal-open')
+      $('body').addClass('modal-open')
       $('.modal-overlay').removeClass('ng-hide')
       $('.modal').removeClass('ng-hide')
       return
@@ -380,6 +381,7 @@ angular.module( 'app' ).controller
     $scope.closeModal = () ->
       $scope.modalOpen = false
       $('.wrapper').removeClass('modal-open')
+      $('body').removeClass('modal-open')
       $('.modal-overlay').addClass('ng-hide')
       $('.modal').addClass('ng-hide')
       return
