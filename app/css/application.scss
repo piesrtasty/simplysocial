@@ -111,6 +111,10 @@ $modal_content_width: 575px;
 $modal_content_height: 215px;
 $modal_content_offset: 21px;
 
+// Settings Avatar
+$settings_avatar_width: 85px;
+$settings_avatar_height: 85px;
+
 /* -------------------------- */
 /*          Angular
 /* -------------------------- */
@@ -200,6 +204,10 @@ button:focus  {
   
 }
 
+.container {
+  width: 575px;
+}
+
 /* -------------------------- */
 /*          Topnav
 /* -------------------------- */
@@ -275,9 +283,9 @@ button:focus  {
 .current-user-avatar {
   position: absolute;
   right: 108px;
-  top: 15px;
+  top: 0;
   width: $avatar_width + 10px;
-  height: $avatar_height;
+  height: 100%;
   padding-right: 10px;
   cursor: pointer;
   background: url('/avatars/current_user_avatar.png') no-repeat center;
@@ -286,10 +294,10 @@ button:focus  {
 
 .open-menu  {
   position: absolute;
-  top: 29px;
+  top: 0;
   right: 101px;
   width: $chevron_down_width;
-  height: $chevron_down_height;
+  height: 100%;
   cursor: pointer;
   background: url('/icons/chevron-down.png') no-repeat center;
   @include image-2x('/icons/chevron-down@2x.png', $chevron_down_width, $chevron_down_height);
@@ -323,6 +331,12 @@ button:focus  {
     font-size: 12px;
     padding: 8px 0px 8px 20px;
     border-bottom: 1px solid $blue_gray4;
+    cursor: pointer;
+
+    a {
+      text-decoration: none;
+    }
+
   }
 
   li:last-child {
@@ -905,20 +919,154 @@ $modal_content_inner_top_offset: 26px;
 
 }
 
+/* -------------------------- */
+/*        Settings
+/* -------------------------- */
+
+
+.settings {
+  margin: 0 auto;
+  margin-top: $topnav_height;
+  padding-top: 50px;
+
+  section {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    margin: 50px 0px 50px 0;
+    border-bottom: 1px solid $blue_gray4;
+  }
+
+  h1  {
+    font-weight: 100;
+    margin: 0;
+    padding-bottom: 5px;
+  }
+
+  h5  {
+    color: #70767F;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+  }
+
+  .content {
+    position: absolute;
+    // background-color: blue;
+    top: 45px;
+  }
+
+  .account .content {
+    top: 35px;
+  }
+
+  .settings-avatar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $settings_avatar_width;
+    height: $settings_avatar_height;
+    background: url('/avatars/settings-avatar.png') no-repeat center;
+    @include image-2x('/avatars/settings-avatar@2x.png', $settings_avatar_width, $settings_avatar_height);
+  }
+
+  .change-avatar {
+    height: 25px;
+    width: $settings_avatar_width;
+    border: 1px solid #BEC3CB;
+    @include border-radius(3px);
+    background: none;
+    position: absolute;
+    font-size: 12px;
+    left: 0;
+    top: $settings_avatar_height + 10px;
+  }
+
+  .user-fields  {
+    position: absolute;
+    top: 0;
+    left: $settings_avatar_width + 50px;
+
+    input {
+      width: 366px;
+      height: 38px;
+      @include border-radius(2px);
+      border: 1px solid #BEC3CB;
+      margin-bottom: 21px;
+      padding-left: 41px;
+    }
+
+    .field-icon {
+
+      position: absolute;
+      left: 13px;
+
+      &.user-icon {
+        width: 16px;
+        height: 16px;
+        top: 12px;
+        background: url('/icons/user-icon.png') no-repeat center;
+        @include image-2x('/icons/user-icon@2x.png', 16px, 16px);
+      }
+
+      &.email-icon {
+        width: 16px;
+        height: 13px;
+        top: 78px;
+        background: url('/icons/mail-icon.png') no-repeat center;
+        @include image-2x('/icons/mail-icon@2x.png', 16px, 13px);
+      }
+
+      &.lock-icon {
+        top: 138px;
+        width: 16px;
+        height: 17px;
+        background: url('/icons/lock-icon.png') no-repeat center;
+        @include image-2x('/icons/lock-icon@2x.png', 16px, 17px);
+      }
+
+    }
+
+    .change-password  {
+      position: absolute;
+      top: 142px;
+      color: #C7CBD2;
+      right: 20px;
+      font-size: 13px;
+      font-weight: 100;
+      font-family: "Proxima Nova";
+      cursor: pointer;
+    }
 
 
 
+  }
 
-.Post {
-  font-size: 14px;
-  font-family: "Open Sans";
-  color: rgb(255, 255, 255);
-  line-height: 1.286;
-  position: absolute;
-  left: 962.625px;
-  top: 355.498px;
-  z-index: 4704;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

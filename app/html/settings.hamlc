@@ -1,0 +1,32 @@
+%section.wrapper
+
+  %section.header
+    != render_partial( '_topnav', {className: 'opaque fixed'} )
+
+  %section.settings.container
+    %h1 Settings
+
+    %section.account
+      %h5 ACCOUNT
+      .content
+        .settings-avatar
+        %button.change-avatar Change
+        .user-fields
+          %input.name-field{ type: 'text', value:'Jessica Tuan' }
+            .field-icon.user-icon
+          %input.email-field{ type: 'text', value:'jessica@mail.com' }
+            .field-icon.email-icon
+          %input.password-field{ type: 'password', value: 'xxxxxxx' }
+            .field-icon.lock-icon
+          .change-password change
+
+    %section.notifications
+      %h5 NOTIFICATIONS
+      .content
+
+    %section.privacy
+      %h5 PRIVACY
+      .content
+
+  %section.footer
+    != render_partial( '_footer' )
