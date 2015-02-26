@@ -135,9 +135,9 @@ $settings_avatar_height: 85px;
 body {
   background-color: white;
   min-width: 800px;
-  // &.modal-open  {
-  //   overflow: hidden;
-  // }
+  &.modal-open  {
+    overflow: hidden;
+  }
 
 }
 
@@ -462,6 +462,8 @@ form.new-post {
 
     a {
       text-decoration: none;
+      color: white;
+      opacity: .7;
     }
 
     &.selected {

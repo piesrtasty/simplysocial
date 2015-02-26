@@ -362,11 +362,12 @@ angular.module( 'app' ).controller
 
     $selectNav = (route) ->
       $('.nav-item').removeClass('selected')
-      console.log 'hi'
-
 
     $scope.goHome = () ->
-      $window.location.href = "/"
+      $location.path('/')
+
+    $scope.goPhotos = () ->
+      $location.path('/photos');
 
     # TODO: Debug this binding
     $scope.newMessage = () ->

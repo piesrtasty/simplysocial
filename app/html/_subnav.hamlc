@@ -4,5 +4,5 @@
   .nav-item 
     %a{ href:'/photos' } PHOTOS
   .nav-item VIDEOS
-  .list-view.toggle-post-layout.selected
-  .tile-view.toggle-post-layout
+  .list-view.toggle-post-layout.selected{ ng-click: "goHome()" }
+  .tile-view.toggle-post-layout{ ng-click: "goPhotos()" }
