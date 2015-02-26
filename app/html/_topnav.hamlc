@@ -1,6 +1,6 @@
 .topnav{ ng-controller: 'postsController' }
-	.icon-logo
-	.text-logo simply
+	.icon-logo{ ng-click: "goHome()" }
+	.text-logo{ ng-click: "goHome()" } simply
 
 	.new-message{ ng-click: "newMessage()" }
 	%input.search-input{ type: 'text' }

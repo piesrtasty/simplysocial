@@ -23,10 +23,60 @@
     %section.notifications
       %h5 NOTIFICATIONS
       .content
+        .notification
+          != render_partial ( '_toggle_switch' )
+          .note email me when my posts are marked as favorites
+        .notification
+          != render_partial ( '_toggle_switch' )
+          .note email me when I'm mentioned
+        .notification
+          != render_partial ( '_toggle_switch' )
+          .note email me when I get a reply
+        .notification
+          != render_partial ( '_toggle_switch' )
+          .note email me when someone follows me
 
     %section.privacy
       %h5 PRIVACY
       .content
+        .privacy-option
+          .checkbox-wrapper
+            .checkbox.checked
+          .option-text allow anyone to tag me
+        .privacy-option
+          .checkbox-wrapper
+            .checkbox
+          .option-text only allow people I follow to tag me
+        .privacy-option
+          .checkbox-wrapper
+            .checkbox
+          .option-text don't allow anyone to tag me
+        .privacy-option
+          .checkbox-wrapper
+            .checkbox.checked
+          .option-text add a location to my posts
+        .privacy-option
+          .checkbox-wrapper
+            .checkbox.checked
+          .option-text let others find me by my email addrss
+        .privacy-option
+          .checkbox-wrapper
+            .checkbox.checked
+          .option-text tailor ads based on my information
+
+    %section.save-settings
+      %button.save-changes Save Changes
 
   %section.footer
     != render_partial( '_footer' )
+
+%section.modal-overlay{ ng-show: "{{modalOpen}}" }
+.modal{ ng-show: "{{modalOpen}}" }
+  .modal-wrapper
+    .close-modal{ ng-click: "closeModal()" }
+    .modal-content
+      .add-media-container
+        != render_partial( '_add_media' )
+      %label Create new message
+      %textarea
+      %button Post

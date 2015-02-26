@@ -1,0 +1,2 @@
+.checkbox-wrapper
+	.checkbox{ class: @className }

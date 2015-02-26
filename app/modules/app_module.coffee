@@ -18,7 +18,7 @@ app.config ($stateProvider, $urlRouterProvider, $locationProvider) ->
   ).state("settings",
     url: "/settings"
     templateUrl: "html/settings"
-    controller: "settingsController"
+    controller: "postsController"
   )
 
 app.run ($rootScope) ->  

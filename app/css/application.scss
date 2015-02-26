@@ -228,6 +228,7 @@ button:focus  {
   top: $nav_icon_top_offset;
   width: $icon_logo_width;
   height: $icon_logo_height;
+  cursor: pointer;
   background: url('/icons/logo.png') no-repeat center;
   @include image-2x('/icons/logo@2x.png', $icon_logo_width, $icon_logo_height);
 }
@@ -238,6 +239,7 @@ button:focus  {
   top: $nav_icon_top_offset + $text_logo_top_offset;
   color: $green_gray3;
   font-family: 'ProximaNova';
+  cursor: pointer;
   font-size: 18px;
 }
 
@@ -931,7 +933,7 @@ $modal_content_inner_top_offset: 26px;
 
   section {
     position: relative;
-    height: 300px;
+    // height: 300px;
     width: 100%;
     margin: 50px 0px 50px 0;
     border-bottom: 1px solid $blue_gray4;
@@ -941,6 +943,7 @@ $modal_content_inner_top_offset: 26px;
     font-weight: 100;
     margin: 0;
     padding-bottom: 5px;
+    color: #3E454D;
   }
 
   h5  {
@@ -1039,45 +1042,141 @@ $modal_content_inner_top_offset: 26px;
       cursor: pointer;
     }
 
+  }
 
+  .account  {
+    height: 250px;
+  }
+
+  .notifications {
+
+    height: 260px;
+
+    .content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding-left: 0;
+    }
+
+    .notification {
+      margin-bottom: 20px;
+      position: relative;
+
+      .note   {
+        position: absolute;
+        top: 0;
+        left: 75px;
+        width: 400px;
+      }
+
+    }
+
+  }
+
+  .switch-container{
+    position:relative;
+    background: #1AB187;
+    width:51px;
+    height:25px;
+    border-radius:15px;
+    padding:0;
+    margin:0;
+    -webkit-transition:all .2s ease;
+    -moz-transition:all .2s ease;
+    transition:all .2s ease;
+  }
+
+  .containerOff{
+    background:red;
+  }
+
+  .switch{
+    position:absolute;
+    background:white;
+    width:20px;
+    height:22px;
+    right: 1px;
+    top: 1px;
+    // border:1px solid #666;
+    border-radius:15px;
+    cursor:pointer;
+    // box-shadow: -1px 0px 1px #333;
+    -webkit-transition:all .2s ease;
+    -moz-transition:all .2s ease;
+    transition:all .2s ease;
+  }
+
+  .switchOff{
+    -webkit-transform:translateX(15px);
+    -moz-transform:translateX(15px);
+    transform:translateX(15px);
+    box-shadow: 1px 0px 1px #333;
+  }
+
+  .privacy {
+
+    height: 300px;
+
+    .content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding-left: 0;
+    }
+
+    .privacy-option   {
+      margin-bottom: 10px;
+      position: relative;
+    }
+
+    .option-text {
+      position: absolute;
+      top: 2px;
+      left: 50px;
+      width: 400px;
+    }
+
+    .checkbox-wrapper {
+      height: 24px;
+      width: 24px;
+      @include border-radius(50%);
+      border: 1px solid #BEC3CB;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .checkbox {
+      height: 15px;
+      width: 15px;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      @include border-radius(50%);
+      background-color: #1AB187;
+      display: none;
+
+      &.checked {
+        display: block;
+      }
+
+    }
+
+  }
+
+  .save-settings {
+
+    border: none;
+
+    .save-changes {
+      border: none;
+      background-color: #1AB187;
+      color: white;
+      height: 40px;
+      width: 150px;
+      @include border-radius(3px);
+    }
 
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

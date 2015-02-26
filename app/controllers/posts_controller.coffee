@@ -1,5 +1,5 @@
 angular.module( 'app' ).controller
-  postsController: ($rootScope, $scope, $location) ->
+  postsController: ($rootScope, $scope, $location, $window) ->
  
     $scope.posts = [
       {
@@ -224,6 +224,9 @@ angular.module( 'app' ).controller
     
     $scope.menuOpen = false
     $scope.modalOpen = false
+
+    $scope.goHome = () ->
+      $window.location.href = "/"
 
     # TODO: Debug this binding
     $scope.newMessage = () ->
